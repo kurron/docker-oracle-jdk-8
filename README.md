@@ -1,2 +1,2 @@
-# docker-oracle-jdk-8
-Ubuntu Docker container with Oracle JD 8 Installed
+# Overview 
+This project will create an Ubuntu Docker container with Oracle JDK 8 Installed.
