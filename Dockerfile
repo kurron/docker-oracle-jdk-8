@@ -23,6 +23,9 @@ ENV JDK_HOME /usr/lib/jvm/jdk1.8.0_60
 ENV JAVA_HOME /usr/lib/jvm/jdk1.8.0_60
 ENV PATH $PATH:$JAVA_HOME/bin
 
+# Force Docker to use UTF-8 encodings
+ENV LANG C.UTF-8
+
 # export meta-data about this container
 ENV KURRON_JAVA_VENDOR Oracle 
 ENV KURRON_JAVA_VERSION 1.8.0_60 
