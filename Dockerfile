@@ -3,6 +3,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Install JDK 8 
 RUN apt-get --quiet update && \
     apt-get --quiet --yes install wget && \
