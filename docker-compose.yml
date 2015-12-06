@@ -1,0 +1,7 @@
+idea:
+    build: .
+    labels:
+        org.kurron.description: "Oracle JDK"
+        org.kurron.version: "1.8.0_65"
+    container_name: "jdk"
+    net: "host"
