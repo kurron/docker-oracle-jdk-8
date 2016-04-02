@@ -25,10 +25,24 @@ ENV JDK_HOME /usr/lib/jvm/jdk1.8.0_77
 ENV JAVA_HOME /usr/lib/jvm/jdk1.8.0_77
 ENV PATH $PATH:$JAVA_HOME/bin
 
+# used to set common JVM tunings
+ENV JVM_HEAP_MIN 128m
+ENV JVM_HEAP_MAX 512m
+ENV JVM_METASPACE 512m
+ENV JVM_CMS_OCCUPANCY 70
+ENV JVM_GC_LOG_PATH /var/logs
+ENV JVM_GC_LOG_FILE_COUNT 10
+ENV JVM_GC_LOG_FILE_SIZE 100M
+ENV JVM_DNS_TTL 30
+ENV JVM_JMX_HOST 127.0.0.1
+ENV JVM_JMX_PORT 9999
+
 # Force Docker to use UTF-8 encodings
 ENV LANG C.UTF-8
 
 # export meta-data about this container
 LABEL org.kurron.java.vendor="Oracle"  org.kurron.java.version="1.8.0_77"
 
+ADD launch-jvm.sh /opt/launch-jvm.sh
+WORKDIR /opt
 
