@@ -2,4 +2,4 @@ jdk:
     build: .
     container_name: "jdk"
     net: "host"
-    command: java -version
+    command: /opt/launch-jvm.sh -version
