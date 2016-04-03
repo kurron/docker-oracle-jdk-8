@@ -1,5 +1,5 @@
-# Trusty 
-FROM ubuntu:14.04
+# Use this as a base to solve the PID 1 problem 
+FROM phusion/baseimage:0.9.15
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install JDK 8 
 RUN apt-get --quiet update && \
     apt-get --quiet --yes install wget && \
-    apt-get clean && \
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     wget --quiet \
          --output-document=/jdk-8.tar.gz \
          --no-check-certificate \
