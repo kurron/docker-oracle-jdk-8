@@ -18,7 +18,7 @@ Docker will automatically install the newly built image into the cache.
 `docker-compose up` will launch the image in a simple test mode to ensure things are wired up correctly. 
 
 ## Simple Usage
-The `/opt/launch-jvm.sh` script is available to launch the JVM and is the recommended means of doing so. An
+The `/opt/launch-jvm.sh` script is available to launch the JVM and is convenient means of doing so. An
 example of how to use the script might look like this `ENTRYPOINT ["/opt/launch-jvm.sh", "-jar", "/opt/server.jar"]`.
 
 The environment variables in the container control some of the settings in the script:
@@ -37,7 +37,7 @@ The environment variables in the container control some of the settings in the s
 The settings in the script were borrowed from 
 [Java VM Options You Should Always Use in Production](http://blog.sokolenko.me/2014/11/javavm-options-production.html).
 
-Since the settings are environment variables, you make customize them at launch time.
+Since the settings are environment variables, you may customize them at launch time.
 
 **WARNING:** this is simplistic mechanism that, because of the PID 1 problem, will prevent some applications, such as
 Spring Boot based ones, from seeing exit signals and cleaning up properly after themselves.
@@ -50,7 +50,7 @@ however, you decide to launch your JVM via shell script you will run into proble
 microservice, I've found that the JVM never sees the shutdown signal and the program never gets a chance to clean 
 up.  This left stale registrations in our service registry.  Not good.  A more complex, but safer, way of launching 
 your application is to create a launch script that follows certain conventions.  Here is an example from an
-image that is based on this one: (docker-spring-cloud-configuration-server)[https://github.com/kurron/docker-spring-cloud-configuration-server].
+image that is based on this one: [docker-spring-cloud-configuration-server](https://github.com/kurron/docker-spring-cloud-configuration-server).
 
 ### Create a custom launch script
 
@@ -156,6 +156,9 @@ configuration-server exited with code 0
 ```
 
 # Troubleshooting
+
+## Docker Compose Version
+You must be running the current version of Docker Compose or it won't recognize the newer format of the build file.
 
 # License and Credits
 This project is licensed under the [Apache License Version 2.0, January 2004](http://www.apache.org/licenses/).
