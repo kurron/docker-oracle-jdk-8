@@ -1,5 +1,7 @@
-jdk:
-    build: .
-    container_name: "jdk"
-    net: "host"
-    command: /opt/launch-jvm.sh -version
+version: '2'
+services:
+    jdk:
+        build: .
+        container_name: "jdk"
+        network_mode: "host"
+        command: /opt/launch-jvm.sh -version
