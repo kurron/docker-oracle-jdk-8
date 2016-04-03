@@ -133,6 +133,8 @@ services:
             SPRING_CLOUD_CONSUL_HOST: 192.168.1.227
             JVM_JMX_HOST: 192.168.1.227
             JVM_HEAP_MAX: 768m 
+            JVM_JMX_HOST: space
+            JVM_JMX_PORT: 1999
 ```
 
 `docker-compose up` should start the container and allow you to watch its log messages.
