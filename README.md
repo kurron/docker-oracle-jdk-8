@@ -49,8 +49,8 @@ microservices.  If you run something simple like `java -jar foo` as your `ENTRYP
 however, you decide to launch your JVM via shell script you will run into problems.  In the case of a Spring Boot 
 microservice, I've found that the JVM never sees the shutdown signal and the program never gets a chance to clean 
 up.  This left stale registrations in our service registry.  Not good.  A more complex, but safer, way of launching 
-your application is to create a launch script that follows certain conventions.  Here is an example from an
-image that is based on this one: [docker-spring-cloud-configuration-server](https://github.com/kurron/docker-spring-cloud-configuration-server).
+your application is to create a launch script that follows certain conventions.  Here is an example borrowed from 
+ [docker-spring-cloud-configuration-server](https://github.com/kurron/docker-spring-cloud-configuration-server).
 
 ### Create a custom launch script
 
