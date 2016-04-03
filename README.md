@@ -135,6 +135,8 @@ services:
             JVM_HEAP_MAX: 768m 
 ```
 
+`docker-compose up` should start the container and allow you to watch its log messages.
+
 ### Shutdown the container 
 `docker stop configuration-server` should cleanly shutdown this example server and the logs should indicate a clean shutdown.
 
