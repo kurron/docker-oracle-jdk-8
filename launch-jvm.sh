@@ -25,6 +25,7 @@ CMD="$JAVA_HOME/bin/java \
     -Dsun.net.inetaddr.ttl=$JVM_DNS_TTL \
     -Djava.rmi.server.hostname=$JVM_JMX_HOST \
     -Dcom.sun.management.jmxremote.port=$JVM_JMX_PORT \
+    -Dcom.sun.management.jmxremote.rmi.port=$JVM_JMX_RMI_PORT \
     -Dcom.sun.management.jmxremote.authenticate=false \
     -Dcom.sun.management.jmxremote.ssl=false \
     $*"

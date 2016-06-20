@@ -35,13 +35,14 @@ ENV JVM_GC_LOG_FILE_COUNT 10
 ENV JVM_GC_LOG_FILE_SIZE 100M
 ENV JVM_DNS_TTL 30
 ENV JVM_JMX_HOST 127.0.0.1
-ENV JVM_JMX_PORT 9999
+ENV JVM_JMX_PORT 9898
+ENV JVM_JMX_RMI_PORT 9999
 
 # Force Docker to use UTF-8 encodings
 ENV LANG C.UTF-8
 
 # export meta-data about this container
-LABEL org.kurron.java.vendor="Oracle"  org.kurron.java.version="1.8.0_91"
+LABEL org.kurron.java.vendor="Oracle"  org.kurron.java.version="1.8.0_91a"
 
 ADD launch-jvm.sh /opt/launch-jvm.sh
 WORKDIR /opt
