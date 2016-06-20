@@ -32,7 +32,8 @@ The environment variables in the container control some of the settings in the s
 * JVM_GC_LOG_FILE_SIZE -- the maximum size of a single GC log file. Defaults to 100M.
 * JVM_DNS_TTL -- how long, in seconds, DNS entries should be cached. Defaults to 30.
 * JVM_JMX_HOST -- the interface to bind JMX to.  Defaults to 127.0.0.1.
-* JVM_JMX_PORT -- the port to bind JMX to.  Defaults to  9999.
+* JVM_JMX_PORT -- the port to bind JMX to.  Defaults to  9898.
+* JVM_JMX_RMI_PORT -- the port to bind RMI to.  Defaults to  9999.
 
 The settings in the script were borrowed from 
 [Java VM Options You Should Always Use in Production](http://blog.sokolenko.me/2014/11/javavm-options-production.html).
@@ -86,6 +87,7 @@ CMD="$JAVA_HOME/bin/java \
     -Dsun.net.inetaddr.ttl=$JVM_DNS_TTL \
     -Djava.rmi.server.hostname=$JVM_JMX_HOST \
     -Dcom.sun.management.jmxremote.port=$JVM_JMX_PORT \
+    -Dcom.sun.management.jmxremote.rmi.port=$JVM_JMX_RMI_PORT \
     -Dcom.sun.management.jmxremote.authenticate=false \
     -Dcom.sun.management.jmxremote.ssl=false \
     -jar /opt/server.jar"
@@ -135,6 +137,7 @@ services:
             JVM_HEAP_MAX: 768m 
             JVM_JMX_HOST: space
             JVM_JMX_PORT: 1999
+            JVM_JMX_RMI_PORT: 2000
 ```
 
 `docker-compose up` should start the container and allow you to watch its log messages.
