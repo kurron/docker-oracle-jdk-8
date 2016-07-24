@@ -14,15 +14,15 @@ RUN apt-get --quiet update && \
          --no-check-certificate \
          --no-cookies \
          --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-         http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz && \
+         http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz && \
     mkdir -p /usr/lib/jvm && \
     tar --gunzip --extract --verbose --file /jdk-8.tar.gz --directory /usr/lib/jvm && \
     rm -f /jdk-8.tar.gz && \
     chown -R root:root /usr/lib/jvm
 
 # set the environment variables 
-ENV JDK_HOME /usr/lib/jvm/jdk1.8.0_91
-ENV JAVA_HOME /usr/lib/jvm/jdk1.8.0_91
+ENV JDK_HOME /usr/lib/jvm/jdk1.8.0_101
+ENV JAVA_HOME /usr/lib/jvm/jdk1.8.0_101
 ENV PATH $PATH:$JAVA_HOME/bin
 
 # used to set common JVM tunings
@@ -42,7 +42,7 @@ ENV JVM_JMX_RMI_PORT 9999
 ENV LANG C.UTF-8
 
 # export meta-data about this container
-LABEL org.kurron.java.vendor="Oracle"  org.kurron.java.version="1.8.0_91a"
+LABEL org.kurron.java.vendor="Oracle"  org.kurron.java.version="1.8.0_101"
 
 ADD launch-jvm.sh /opt/launch-jvm.sh
 WORKDIR /opt
