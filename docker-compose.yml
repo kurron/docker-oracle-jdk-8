@@ -2,6 +2,7 @@ version: '2'
 services:
     jdk:
         build: .
+        image: jdk:compose
         container_name: "jdk"
         network_mode: "host"
         command: /opt/launch-jvm.sh -version
